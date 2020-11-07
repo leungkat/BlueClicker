@@ -1,7 +1,29 @@
-.testBox{
+.textBox{
+  text-align: center;
   border: 5px solid blueviolet;
 }
 
-.blue{
-  
+.blueMas{
+  display:block;
+  margin-left:auto;
+  margin-right:auto;
+  position: relative;
+  top: 10px;
+}
+
+.blueMas:active{
+  top: 0px;
+}
+
+.fadeOut {
+  animation: fadeOut ease 2s;
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity:1;
+  }
+  100% {
+    opacity:0;
+  }
 }
