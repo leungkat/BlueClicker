@@ -15,6 +15,11 @@
   top: 0px;
 }
 
+.buttonArea{
+  text-align: center;
+  position: relative;
+}
+
 .fadeOut {
   animation: fadeOut ease 2s;
 }

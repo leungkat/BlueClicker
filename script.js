@@ -1,6 +1,10 @@
-var counter = 0;
+$(document).ready(function () {
+  var counter = 0;
 
-function clicked(){
-  counter += 1;
-  document.getElementById("counterText").innerHTML = counter;
-}
+  $(".blueMas").on({'click':function(){
+   counter += 1;
+    $("#counterText").html(counter);
+  }
+  });
+
+});
