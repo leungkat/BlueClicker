@@ -1,0 +1,32 @@
+#taskbar{
+  height: 150px;
+  width: 300px;
+  padding: 10px;
+  background-color: cornflowerblue; 
+  border-radius: 10px;
+}
+body{
+  font-family: sans-serif;
+}
+.button {
+  background-color: rgb(199, 186, 255);
+  border: slateblue;
+  color: slateblue;
+  padding: 5px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  border-radius: 5px;
+  margin: 10px;
+  left: 50%;
+  width: 90%;
+  height: 30%
+}
+
+.button:hover{
+  background-color: rgb(67, 51, 138)
+}
+
+.clickbutton{
+  background-color: #050938;
+}
