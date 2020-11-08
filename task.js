@@ -3,6 +3,8 @@ let tasks = ["Take a walk", "Stretch for 5 minutes", "Stand up and walk around",
 
 let finished = [0,0,0]
 
+var counter = 0;
+
 function setTasks(){
   var first = -1, second = -1, third = -1;
 
@@ -64,6 +66,9 @@ var add = true;
   color.classList.toggle("clickbutton");
 
   var alldone = true;
+  counter = localStorage.getItem("counter"); 
+  counter = parseInt(counter);
+  
 
   for(var i = 0; i < 3; i++){
     if(finished[i] == 0){
@@ -80,13 +85,19 @@ var add = true;
     document.getElementById("t2").classList.toggle("clickbutton");
     document.getElementById("t3").classList.toggle("clickbutton");
     //add 50 points here
+    counter += 50;
+    localStorage.setItem("counter", counter); 
   }
 
   if(add){
     //add 20 points here
+    counter += 20;
+    localStorage.setItem("counter", counter); 
   }
   else{
     //subtract 20 points here
+    counter -= 20;
+    localStorage.setItem("counter", counter); 
   }
 
 }
