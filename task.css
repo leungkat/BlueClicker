@@ -4,6 +4,7 @@
   padding: 10px;
   background-color: cornflowerblue; 
   border-radius: 10px;
+  margin: auto;
 }
 body{
   font-family: sans-serif;
@@ -30,4 +31,8 @@ body{
 
 .clickbutton{
   background-color: #050938;
+}
+
+#navihighlight{
+  background-color: rgb(101, 101, 235);
 }

@@ -1,3 +1,7 @@
+//Item prices and whatnot
+item_dict = {"bigger": 50, "dota": 100,  "jersey": 200}
+
+
 //Ensures that jQUery loads first, place all code in here
 $(document).ready(function () {
   //Load. If counter doesnt exist, intilize one
@@ -18,7 +22,7 @@ $(document).ready(function () {
     //Save points to storage
     localStorage.setItem("counter", counter);
   }
-  });
+  })
 
   $("#clearSave").on({'click':function(){
     counter = 0;
@@ -26,7 +30,36 @@ $(document).ready(function () {
     //Prints the counter html
     $("#counterText").html(counter);
   }
-  });
+  })
 
+  $("#buy1").on({'click': function() {
+    if (counter - item_dict['bigger'] >= 0) {
+      counter -= item_dict['bigger'];
+      localStorage.setItem("counter", counter);
+    }
+    $("#counterText").html(counter);
+  }
+  })
 
+   $("#buy2").on({'click': function() {
+      if (counter - item_dict['dota'] >= 0) {
+        counter -= item_dict['dota'];
+        localStorage.setItem("counter", counter);
+      }
+      $("#counterText").html(counter);
+    }
+    })
+
+  $("#buy3").on({'click': function() {
+      if (counter - item_dict['jersey'] >= 0) {
+        counter -= item_dict['jersey'];
+        localStorage.setItem("counter", counter);
+      }
+      $("#counterText").html(counter);
+    }
+  })
+
+//NO CODE BEYOND THIS POINT
 });
+
+ 

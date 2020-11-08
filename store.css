@@ -20,3 +20,40 @@
   padding: 16px;
   text-decoration: none;
 }
+
+#taskbar{
+  height: 150px;
+  width: 300px;
+  padding: 10px;
+  background-color: cornflowerblue; 
+  border-radius: 10px;
+  margin: auto;
+}
+body{
+  font-family: sans-serif;
+}
+
+.button {
+  background-color: rgb(199, 186, 255);
+  border: slateblue;
+  color: slateblue;
+  padding: 5px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  border-radius: 5px;
+  margin: auto;
+  display: block;
+}
+
+.button:hover{
+  background-color: rgb(67, 51, 138)
+}
+
+.clickbutton{
+  background-color: #050938;
+}
+
+#navihighlight{
+  background-color: rgb(101, 101, 235);
+}
