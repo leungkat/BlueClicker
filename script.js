@@ -1,7 +1,6 @@
 //Item prices and whatnot
 item_dict = {"bigger": 50, "dota": 100,  "jersey": 200, "lol": 100, "logo": 200}
 
-
 //Ensures that jQUery loads first, place all code in here
 $(document).ready(function () {
   //Load. If counter doesnt exist, intilize one
@@ -14,6 +13,9 @@ $(document).ready(function () {
     $("#counterText").html(counter);
   }
 
+  //things already purchased from shop
+  let inventory = [0,0,0,0,0];
+  
   $(".blueMas").on({'click':function(){
     counter += 1;
     //Prints the counter html
@@ -38,6 +40,8 @@ $(document).ready(function () {
       localStorage.setItem("counter", counter);
     }
     $("#counterText").html(counter);
+
+    inventory[0] = 1;
   }
   })
 
@@ -47,6 +51,9 @@ $(document).ready(function () {
         localStorage.setItem("counter", counter);
       }
       $("#counterText").html(counter);
+
+      inventory[1] = 1;
+      console.log(inventory);
     }
     })
 
@@ -56,6 +63,8 @@ $(document).ready(function () {
         localStorage.setItem("counter", counter);
       }
       $("#counterText").html(counter);
+
+      inventory[2] = 1;
     }
     })
   $("#buy4").on({'click': function() {
@@ -64,6 +73,8 @@ $(document).ready(function () {
         localStorage.setItem("counter", counter);
       }
       $("#counterText").html(counter);
+
+      inventory[3] = 1;
     }
   })
 $("#buy5").on({'click': function() {
@@ -72,8 +83,30 @@ $("#buy5").on({'click': function() {
         localStorage.setItem("counter", counter);
       }
       $("#counterText").html(counter);
+
+      inventory[4] = 1;
     }
     })
+  console.log(inventory);
+function loading(){
+
+  if(inventory[1] == 1){
+    var dotaelement = document.getElementById("dowota");
+    dotaelement.classList.toggle("transparent");
+  }
+  if(inventory[2] == 1){
+    var lolelement = document.getElementById("lol");
+    lolelement.classList.toggle("transparent");
+  }
+  if(inventory[3] == 1){
+    var jerseyelement = document.getElementById("jersey");
+    jerseyelemetn.classList.toggle("transparent");
+  }
+  if(inventory[4] == 1){
+    var logoelement = document.getElementById("logo");
+    logoelement.classList.toggle("transparent");
+  }
+}
 //NO CODE BEYOND THIS POINT >:) UNLESS???
 });
 
