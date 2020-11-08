@@ -28,6 +28,7 @@ function setTasks(){
 
 function completeTask(tasknum){
 var color = -1;
+var add = true;
   switch(tasknum){
     case 1:
       if(finished[0] == 0){
@@ -35,6 +36,7 @@ var color = -1;
       }
       else{
         finished[0] = 0;
+        add = false;
       }
       color = document.getElementById("t1");
       break;
@@ -44,6 +46,7 @@ var color = -1;
       }
       else{
         finished[1] = 0;
+        add = false;
       }
       color = document.getElementById("t2");
       break;
@@ -53,11 +56,11 @@ var color = -1;
       }
       else{
         finished[2] = 0;
+        add = false;
       }
       color = document.getElementById("t3");
   }
 
-  //color.style.backgroundColor = "#050938";
   color.classList.toggle("clickbutton");
 
   var alldone = true;
@@ -76,7 +79,16 @@ var color = -1;
     document.getElementById("t1").classList.toggle("clickbutton");
     document.getElementById("t2").classList.toggle("clickbutton");
     document.getElementById("t3").classList.toggle("clickbutton");
+    //add 50 points here
   }
+
+  if(add){
+    //add 20 points here
+  }
+  else{
+    //subtract 20 points here
+  }
+
 }
 
 setTasks();

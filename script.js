@@ -1,5 +1,5 @@
 //Item prices and whatnot
-item_dict = {"bigger": 50, "dota": 100,  "jersey": 200}
+item_dict = {"bigger": 50, "dota": 100,  "jersey": 200, "lol": 100, "logo": 200}
 
 
 //Ensures that jQUery loads first, place all code in here
@@ -51,6 +51,14 @@ $(document).ready(function () {
     })
 
   $("#buy3").on({'click': function() {
+      if (counter - item_dict['lol'] >= 0) {
+        counter -= item_dict['lol'];
+        localStorage.setItem("counter", counter);
+      }
+      $("#counterText").html(counter);
+    }
+    })
+  $("#buy4").on({'click': function() {
       if (counter - item_dict['jersey'] >= 0) {
         counter -= item_dict['jersey'];
         localStorage.setItem("counter", counter);
@@ -58,8 +66,15 @@ $(document).ready(function () {
       $("#counterText").html(counter);
     }
   })
-
-//NO CODE BEYOND THIS POINT
+$("#buy5").on({'click': function() {
+      if (counter - item_dict['logo'] >= 0) {
+        counter -= item_dict['logo'];
+        localStorage.setItem("counter", counter);
+      }
+      $("#counterText").html(counter);
+    }
+    })
+//NO CODE BEYOND THIS POINT >:) UNLESS???
 });
 
  
