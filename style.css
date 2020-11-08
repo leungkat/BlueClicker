@@ -1,6 +1,8 @@
 .textBox{
   text-align: center;
   border: 5px solid blueviolet;
+  position: absolute;
+  width: 100%;
 }
 
 .blueMas{
@@ -29,7 +31,7 @@
 #menu {
   list-style: none;
   background-color: #333333;
-  margin: 0;
+  margin: 50px;
   padding: 0;
 }
 
@@ -56,4 +58,8 @@
   100% {
     opacity:0;
   }
+}
+
+body{
+  background-color: #9aa9ff;
 }
