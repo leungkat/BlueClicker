@@ -32,19 +32,19 @@ $(document).ready(function () {
     $(".pet").hide();
   }
   
-  if(item_owned[1] == true){
+  if(item_owned[2] == true){
     $(".lol").show();
   }else{
     $(".lol").hide();
   }
   
-  if(item_owned[2] == true){
+  if(item_owned[3] == true){
     $(".jersey").show();
   }else{
     $(".jersey").hide();
   }
   
-  if(item_owned[3] == true){
+  if(item_owned[1] == true){
      $(".dota").show();
   }else{
      $(".dota").hide();
