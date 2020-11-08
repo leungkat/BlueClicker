@@ -1,5 +1,8 @@
 //Item prices and whatnot
-item_dict = {"bigger": 50, "dota": 100,  "jersey": 200, "lol": 100, "logo": 200}
+item_dict = {"friend": 50, "dota": 100,  "jersey": 200, "lol": 100, "logo": 200}
+//Keep track if item has already been bought. 
+//Ex: if player bought 'friend' then item_owned['friend'] is true
+item_owned = [false, false, false, false, false, false]
 
 //Ensures that jQUery loads first, place all code in here
 $(document).ready(function () {
@@ -7,19 +10,28 @@ $(document).ready(function () {
   var counter = 0;
   if(localStorage.getItem("counter") === null){
     counter = 0;
-  }else{
+  } else{
     counter = localStorage.getItem("counter"); 
     counter = parseInt(counter);
-    $("#counterText").html(counter);
+    $("#counterText").html("Points: " + counter);
   }
-
-  //things already purchased from shop
-  let inventory = [0,0,0,0,0];
   
+  //On first load, hide all images. Ideally, if purchase goes through call show() on img
+  $(".pet").hide(); 
+  $(".lol").hide();
+  $(".jersey").hide();
+  $(".dota").hide();
+  $(".logo").hide();
+  if (item_owned[0] == true) {
+    $(".pet").show(); 
+  } 
+  
+  
+
   $(".blueMas").on({'click':function(){
     counter += 1;
     //Prints the counter html
-    $("#counterText").html(counter);
+    $("#counterText").html("Points: " + counter);
 
     //Save points to storage
     localStorage.setItem("counter", counter);
@@ -35,27 +47,23 @@ $(document).ready(function () {
   })
 
   $("#buy1").on({'click': function() {
-    if (counter - item_dict['bigger'] >= 0) {
-      counter -= item_dict['bigger'];
+    if (counter - item_dict['friend'] >= 0) {
+      counter -= item_dict['friend'];
       localStorage.setItem("counter", counter);
     }
     $("#counterText").html(counter);
-
-    inventory[0] = 1;
+    $(".pet").show(); 
   }
   })
 
-   $("#buy2").on({'click': function() {
-      if (counter - item_dict['dota'] >= 0) {
-        counter -= item_dict['dota'];
-        localStorage.setItem("counter", counter);
-      }
-      $("#counterText").html(counter);
-
-      inventory[1] = 1;
-      console.log(inventory);
+  $("#buy2").on({'click': function() {
+    if (counter - item_dict['dota'] >= 0) {
+      counter -= item_dict['dota'];
+      localStorage.setItem("counter", counter);
     }
-    })
+    $("#counterText").html(counter);
+  }
+  })
 
   $("#buy3").on({'click': function() {
       if (counter - item_dict['lol'] >= 0) {
@@ -63,8 +71,6 @@ $(document).ready(function () {
         localStorage.setItem("counter", counter);
       }
       $("#counterText").html(counter);
-
-      inventory[2] = 1;
     }
     })
   $("#buy4").on({'click': function() {
@@ -73,8 +79,6 @@ $(document).ready(function () {
         localStorage.setItem("counter", counter);
       }
       $("#counterText").html(counter);
-
-      inventory[3] = 1;
     }
   })
 $("#buy5").on({'click': function() {
@@ -83,30 +87,8 @@ $("#buy5").on({'click': function() {
         localStorage.setItem("counter", counter);
       }
       $("#counterText").html(counter);
-
-      inventory[4] = 1;
     }
     })
-  console.log(inventory);
-function loading(){
-
-  if(inventory[1] == 1){
-    var dotaelement = document.getElementById("dowota");
-    dotaelement.classList.toggle("transparent");
-  }
-  if(inventory[2] == 1){
-    var lolelement = document.getElementById("lol");
-    lolelement.classList.toggle("transparent");
-  }
-  if(inventory[3] == 1){
-    var jerseyelement = document.getElementById("jersey");
-    jerseyelemetn.classList.toggle("transparent");
-  }
-  if(inventory[4] == 1){
-    var logoelement = document.getElementById("logo");
-    logoelement.classList.toggle("transparent");
-  }
-}
 //NO CODE BEYOND THIS POINT >:) UNLESS???
 });
 

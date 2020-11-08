@@ -9,21 +9,45 @@
   </head>
   <body>
     <script src="script.js"></script>
-    <div id = "images">
-    <p class="fadeOut"> :D </p>
-      <a href=# class = "shopitems" id="dowota"><img src="images/TL Dota Poster.jpg" ></a>
-      <a href=# class = "shopitems" id="jersey"><img src="images/TL Jersey.png"></a>
-      <a href=#><img src="images/blue.png" class="blueMas"></a>
-      <a href=# class = "shopitems" id="logo"><img src="images/TL Logo.png"></a>
-      <a href=# class = "shopitems" id="lol"><img src="images/TL LoL Poster.jpg"></a>
+    <p class="fadeOut">:D</p>
+
+    <div class="row">
+      <div class="column">
+        <img src="images/TL Dota Poster.jpg"class = 'dota' style="width:100%">
+      </div>
+      <div class="column">
+        <img src="images/TL Jersey.png" class = 'jersey' style="width:70%">
+      </div>
+      <div class="column">
+        <img src="images/TL LoL Poster.jpg" class = 'lol' style="width:100%">
+      </div>
+      <div class="column">
+        <img src="images/TL Logo.png" class = 'logo' style="width:65%">
+      </div>
     </div>
+
+    <div class = "row2">
+      <div class="column2">
+        <img src="images/blue.png" class="blueMas" style = "width: 30%"></a>
+      </div>
+      <div class="column2">
+        <div class = "pet">
+          <img src="images/blue.png" class="blueMas" style = "width: 30%" id = "pet"></a>
+        </div>
+      </div>    
+  
+    </div>
+
+    
+    
+
      <div class = "textBox">
-      <p id="counterText">Welcome to the ricefields!!!</p>
+      <p id="counterText">Hello! Click me for points!</p>
     </div>
     <br></br>
     <div class="table">
       <ul id="menu">
-        <li id = "navihighlight"><a href="#play" class="mainButton" onclick="loading()">Home</a></li>
+        <li id = "navihighlight"><a href="#play" class="mainButton">Home</a></li>
         <li><a href="store.html" class="mainButton">Store</a></li>
         <li><a href="task.html" class="mainButton">Task</a></li>
         <li><a href="#" class="mainButton" id="clearSave">Clear</a></li>
